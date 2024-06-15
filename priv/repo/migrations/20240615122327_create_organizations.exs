@@ -1,0 +1,13 @@
+defmodule Hatake.Repo.Migrations.CreateOrganizations do
+  use Ecto.Migration
+
+  def change do
+    create table(:organizations) do
+      add :name, :string
+      add :contact_email, :string
+      add :country, :string
+
+      timestamps()
+    end
+  end
+end
