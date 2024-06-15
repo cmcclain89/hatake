@@ -7,6 +7,7 @@ defmodule Hatake.Repo.Migrations.CreateCategories do
       add :description, :string
       add :order, :integer
       add :weight, :decimal
+      add :limit, :integer
 
       timestamps()
     end
