@@ -1,13 +1,14 @@
 defmodule Hatake.Organizations.Organization do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Hatake.Organizations.Team
+  alias Hatake.Organizations
 
   schema "organizations" do
     field :name, :string
     field :contact_email, :string
     field :country, :string
-    has_many :teams, Team
+    has_many :teams, Organizations.Team
+    has_many :org_users, Organizations.User
 
     timestamps()
   end

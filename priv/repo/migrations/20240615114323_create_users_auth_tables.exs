@@ -6,7 +6,7 @@ defmodule Hatake.Repo.Migrations.CreateUsersAuthTables do
 
     create table(:users) do
       add :email, :citext, null: false
-      add :hashed_password, :string, null: false
+      add :hashed_password, :string, null: false, size: 72
       add :confirmed_at, :naive_datetime
       timestamps()
     end
@@ -17,7 +17,7 @@ defmodule Hatake.Repo.Migrations.CreateUsersAuthTables do
       add :user_id, references(:users, on_delete: :delete_all), null: false
       add :token, :binary, null: false
       add :context, :string, null: false
-      add :sent_to, :string
+      add :sent_to, :string, size: 160
       timestamps(updated_at: false)
     end
 

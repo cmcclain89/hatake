@@ -4,10 +4,10 @@ defmodule Hatake.Repo.Migrations.CreateSubcategories do
   def change do
     create table(:subcategories) do
       add :name, :string
-      add :description, :string
-      add :order, :integer
-      add :min_score, :integer
-      add :max_score, :integer
+      add :description, :string, size: 1000
+      add :order, :integer, null: false
+      add :min_score, :integer, null: false
+      add :max_score, :integer, null: false
       add :category_id, references(:categories, on_delete: :delete_all)
 
       timestamps()

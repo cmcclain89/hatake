@@ -4,8 +4,8 @@ defmodule Hatake.Repo.Migrations.CreateOrganizations do
   def change do
     create table(:organizations) do
       add :name, :string
-      add :contact_email, :string
-      add :country, :string
+      add :contact_email, :citext
+      add :country, :string, size: 2
 
       timestamps()
     end
