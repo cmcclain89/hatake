@@ -6,7 +6,7 @@ defmodule Hatake.Repo.Migrations.CreateGoalActions do
       add :action, :string
       add :outcome, :string
       add :goal_id, references(:goals, on_delete: :nothing)
-      add :added_by, references(:users, on_delete: :nothing)
+      add :added_by, references(:org_users, on_delete: :nothing)
 
       timestamps()
     end
